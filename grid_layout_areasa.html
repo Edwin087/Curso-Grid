@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout areas</title>
+    <style>
+        html {
+            box-sizing: border-box;
+            font-size: 16px;
+            font-family: sans-serif;
+        }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(5, auto);
+            grid-template-areas: "header header header header header header"
+                "nav nav nav nav nav nav"
+                "uc-left uc-left uc-center uc-center uc-right uc-right"
+                "uc-middle uc-middle uc-middle uc-lower uc-lower uc-lower"
+                "footer footer  footer footer footer footer"
+            ;
+        }
+
+        body>* {
+            background-color: #666;
+            border: medium solid #222;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+
+
+
+        .header {
+            grid-area: header;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        .nav {
+            grid-area: nav;
+        }
+
+        .uc-left {
+            grid-area: uc-lef;
+        }
+
+        .uc-center {
+            grid-area: uc-center;
+        }
+
+        .uc-right {
+            grid-area: header;
+        }
+
+        .uc-middle {
+            grid-area: c-right;
+        }
+
+        .uc-lower {
+            grid-area: uc-lower;
+        }
+
+
+        @media screen and(min-width:1024px) {
+            .body {
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: repeat(5, auto);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h2>Header</h2>
+    </header>
+    <nav class="nav">
+        <h2>Nav</h2>
+    </nav>
+    <article class="uc-left">
+        <h2>oper content left</h2>
+    </article>
+    <article class="uc-center">
+        <h2>oper content Center</h2>
+    </article>
+    <article class="uc-right">
+        <h2>oper content Right</h2>
+    </article>
+    <article class="uc-middle">
+        <h2>Middle Content</h2>
+    </article>
+    <article class="uc-lower">
+        <h2>Lower content left</h2>
+    </article>
+    <footer class="footer">
+        <h2>Footer</h2>
+    </footer>
+</body>
+
+</html>
